@@ -1,0 +1,56 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Touch of Modern</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="./img/icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link href="style.css" media="screen" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="css/normalize.css"> -->
+  <!-- <link rel="stylesheet" href="css/main.css"> -->
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
+  <!-- <script src="product-tempate.js"></script> -->
+</head>
+
+<body>
+  <!--[if lte IE 9]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+  <main>
+    <div id="plp-page" class="container">
+      <h1 class="title">Welcome to Touch of Modern</h1>
+      <div class="tagline">Live beyond expectations</div>
+      <div id="content"></div>
+      <section class="product-grid-container">
+        <div class="row"></div>
+      </section>
+    </div>
+  </main>
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
+
+  <script src="script.js"></script>
+
+  <script>
+    (function () {
+      productGrid.init('http://localhost:5000/api/data');
+    })()
+  </script>
+</body>
+
+</html>
