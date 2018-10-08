@@ -1,59 +1,6 @@
-a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-family: sans-serif;
-    vertical-align: baseline;
-}
-
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-    display: block;
-}
-
-html {
-	font-size: 16px;
-}
-
-body {
-	font-family: "Arial";
-	line-height: 1;
-    width: 100%;
-    margin: 0 auto;
-}
-
-ol,
-ul {
-	list-style: none;
-}
-
-li {
-	text-decoration: none;
-}
-
-a {
-	text-decoration: none;
-	color: #000;
-}
-
-* {
-	box-sizing: border-box;
-}
-
-/* .product-container{width:300px; border:1px solid #aaa; margin:10px; display:inline-block;}
-.product-container img{width:100%; height:auto;} */
-/* .row{width:946px;} */
-
-/* .col1{float:left;}
-.col2{margin:10px auto;}
-.col3{float:right;} */
-
 #plp-page h1.title {
+    margin-top: 36px;
 	font-size: 20px;
-	/* height: 36px; */
-	line-height: 36px;
-    margin: 0px;
-	/* padding: 10px 0px; */
 }
 
 #plp-page .tagline {
@@ -61,10 +8,13 @@ a {
 }
 
 #plp-page .product-container {
-    transform: scale(1);
+    -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+            transform: scale(1);
+    -webkit-transition: all 380ms ease-in-out;
+    -o-transition: all 380ms ease-in-out;
     transition: all 380ms ease-in-out;
 }
-
 
 #plp-page .product-container a {
     text-decoration: none;
@@ -74,47 +24,60 @@ a {
 	padding: 1px;
 	border-radius: 0px;
     overflow: hidden;
-    margin-bottom: 20px;
 }
 
-#plp-page .product-container a:hover .caption *{
+#plp-page .product-container .caption *{
     color: #0096ff;
 }
 
-#plp-page .icon-container {
+#plp-page .caption p {
+    font-size: 16px;
+}
+
+#plp-page .thumbnail:hover .remove-icon {
+    opacity: 1;
+}
+
+#plp-page .thumbnail .remove-icon {
+    opacity: 0;
+    color: #fff;
     width: 30px;
     height: 30px;
     position: absolute;
     top: 10px;
     right: 25px;
     z-index: 5;
-}
-
-#plp-page .thumbnail:hover .remove-icon {
-    color: #fff;
-}
-
-#plp-page .icon-container .remove-icon {
-	color: #000;
+    font-size: 18px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    height: 100%;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 #plp-page .overlay {
     background-color: rgba(0, 0, 0, 0.8);
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     padding: 5% 10%;
     color: #fff;
     height: calc(100% - 20px);
     width: calc(100% - 30px);
     position: absolute;
     top: 0;
-    /* left: 15; */
     opacity: 0;
     z-index: 3;
     -webkit-transition: opacity 0.5s ease;
@@ -124,3 +87,38 @@ a {
 #plp-page .thumbnail:hover .overlay {
     opacity: 1;
 }
+
+/* === loading icon === */
+.loader-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    min-height: 250px;
+}
+.loader {
+  border: 5px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 5px solid #3498db;
+  width: 30px;
+  height: 30px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }
+}
+/* === loading icon end === */
